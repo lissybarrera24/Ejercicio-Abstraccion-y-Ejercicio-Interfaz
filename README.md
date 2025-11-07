@@ -113,4 +113,134 @@ public class Programa
     } 
 }  
 
+Ejercicio De Interfaz
+IDispositivo Electronico.cs
+public class Dispositivo Electronico
+{
+    namespace Dispositivo
+
+    public interface IDispositivoElectronico
+    {
+        void Encender();
+        void Apagar();
+        void MostrarEstado();
+    }
+}
+
+Telefono.cs
+
+public class Telefono
+{
+    namespace Dispositivos
+{
+    Public class Telefono : IDispositivoElectronico
+    {
+        public string Marca { get; set;}
+        public string Modelo { get; set; }
+        public bool EstaEncendido { get; set; }
+
+        public Telefono(String marca, string modelo)
+        {
+            Marca = marca;
+            Modelo = modelo;
+            EstaEncendido = false;
+        }
+
+        public void Encender()
+        {
+            EstaEncendido = true;
+            Console.WriteLine($"El telefono {Marca} {Modelo} ha sido encendido.");
+        }public class Laptop
+{
+    namespace Dispositivos
+    {
+        public class Laptop : IDispositivoElectronico
+        {
+            public string Marca { get; set; };
+            public string Modelo { get; set; };
+            public bool EstaEncendido { get; set; };
+            public int NivelBateria { get; set; };
+
+
+            public Laptop(string marca, string modelo, int NivelBateria)
+            {
+                Marca = marca;
+                Modelo = modelo;
+                NivelBateria = NivelBateria;
+                EstaEncendido = false;
+            }
+            public void Encender()
+            {
+                EstaEncendido = true;
+                Console.WriteLine($"La laptop {Marca} {Modelo} ha sido encendida");
+            }
+            public void Apagar()
+        {
+            EstaEncendido = false;
+            Console.WriteLine($"La laptop {Marca} {Modelo} ha sido apagada.");
+        }
+        public void MostrarEstado()
+        {
+            string estado = EstaEncendido ? "Encendida" : "Apagada";
+            Console.WriteLine($"Laptop: {Marca} {Modelo} - Estado: {estado} - Bateria: {NivelBateria}%");
+        }
+    }
+}
+
+Programa.cs
+public class Programa
+{
+    namespace MiProyectoConsola
+    {
+            static void Main(string[]args)
+            {
+                //Crear datos con objetos pre-cargados
+                Telefono miTelefono = new Telefono("Samsung", "Galaxy S23");
+                Laptop miLaptop = new Laptop("Dell", "XPS 15", 85);
+
+
+                //Estado inicial
+                Console.WriteLine("=== Estado Inicial ===");
+                miTelefono.MostrarEstado();
+                miLaptop.MostrarEstado();
+                Console.WriteLine();
+
+                //Encender dispositivos
+                Console.WriteLine("Encendiendo Dispositivos");
+                miTelefono.Encender();
+                miLaptop.Encender();
+                miTelefono.MostrarEstado();
+                miLaptop.MostrarEstado();
+                Console.WriteLine();
+
+                //Apagar dispositivos
+                Console.WriteLine("==== Apagando Dispositivos ===");
+                miTelefono.Apagar();
+                milaptop.Apagar();
+                miTelefono.MostrarEstado();
+                miLaptop.MostrarEstado();
+
+            Console.WriteLine("\nPresiona cualqueir tecla para salir...");
+            Console.ReadKey();
+            }
+        }
+    }
+
+        public void Apagar
+        {
+            EstaEncendido = false;
+            Console.WriteLine($ "El telefono {Marca} {Modelo} ha sido apagado.");
+        }
+
+        public void MostrarEstado();
+        {
+            string estado = EstaEncendido ? "Encendido" :"Apagado";
+            Console.WriteLine($ "Telefono: {Marca} {Modelo}- Estado: {estado}");
+        }
+
+    }
+}
+
+Laptop.cs
+
 
